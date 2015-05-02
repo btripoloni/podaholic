@@ -1,0 +1,19 @@
+#home.content {
+  #slogan {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  #search {
+    input {
+      line-height: 3em;
+      height: 3em;
+    }
+
+    button {
+      float: right;
+    }
+  }
+}

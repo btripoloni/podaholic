@@ -6,7 +6,7 @@ html lang="pt"
     meta name="description" content=""
 
     title
-      = page_title(app_name: 'example')
+      = page_title(app_name: 'Podaholic - Found awesome podcasts episodes!')
 
     link href="/favicon.ico" rel=("shortcut icon")
 
@@ -18,5 +18,11 @@ html lang="pt"
       script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
 
   body class=body_class
-    = render 'flash_messages'
-    = yield
+    .content
+      header
+        #logo
+          h1 Podholic
+        #header-right
+          =link_to 'Haven\'t found your podcast? click to add!'
+      = render 'flash_messages'
+      = yield

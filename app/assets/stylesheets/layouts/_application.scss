@@ -1,0 +1,19 @@
+.content {
+  @include outer-container;
+
+  header {
+    @include outer-container;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    #logo {
+      @include span-columns(3);
+      font-size: 1.4em;
+    }
+
+    #header-right {
+      @include span-columns(9);
+      text-align: right;
+    }
+  }
+}
