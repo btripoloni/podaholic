@@ -19,6 +19,7 @@ gem 'neat',                         '1.7.1'
 gem 'bitters',                      '1.0.0'
 gem 'refills',                      '0.1.0'
 gem 'normalize-rails',              '3.0.1'
+gem 'httparty',                     '0.13.3'
 
 group :production, :staging do
   gem 'rails_12factor',             '0.0.3'
