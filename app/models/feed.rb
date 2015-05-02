@@ -28,9 +28,18 @@ class Feed
               raw_description: item['encoded'],
               pub_date: Date.parse(item['pubDate']),
               duration: item['duration'],
-              audio_url: item['enclosure']['url'],
+              audio_url: resolve_audio_url(item['enclosure']),
               image: item['image'].try(:url)
             )
     end
   end
+
+  private
+
+  def resolve_audio_url(enclosure)
+    audio = enclosure.is_a?(Array) ? enclosure.first : enclosure
+    audio['url']
+  end
+
+
 end
