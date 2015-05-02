@@ -2,6 +2,7 @@
 
 .content {
   @include outer-container;
+  min-height: 500px;
 
   header {
     @include outer-container;
@@ -11,6 +12,8 @@
     #logo {
       @include span-columns(3);
       font-size: 1.4em;
+
+      a { color: #333 }
     }
 
     #header-right {

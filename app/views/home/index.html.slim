@@ -3,5 +3,6 @@
     h2 Discover new contents by listening awesome podcasts.
 
   #search
-    input type="text" placeholder="Type your keyword here! ex: Black holes"
-    button Search
+    form.search-bar action="/search" role="search"
+      input type="text" placeholder="Type your keyword here! ex: Black holes" name="q"
+      button type="submit" Search
