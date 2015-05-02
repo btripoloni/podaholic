@@ -12,8 +12,12 @@ class Podcast < ActiveRecord::Base
     end
 
     feed.episodes.each do |episode|
+      puts episode.image_url
       podcast.episodes.create(title: episode.title,
+                              permalink: episode.link,
+                              duration: episode.duration,
                               show_notes: episode.summary,
+                              art_work_url: episode.image_url || feed.podcast.image_url,
                               media_url:  episode.audio_url)
     end
   end

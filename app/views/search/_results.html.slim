@@ -13,7 +13,7 @@
   .body
     - @episodes.with_details.each do |episode, details|
       .item
-        a href="#"
+        = link_to episode.permalink do
           .thumb
             = image_tag episode.art_work_url, height: 184, width: 184
           .info
@@ -23,7 +23,7 @@
                 span
                   | #{episode.podcast_name}
                 span
-                  | &nbsp;Duration: 14:44
+                  | &nbsp;Duration: #{episode.duration}
             .body
             p
               = show_notes(details, episode.show_notes).truncate(300).html_safe

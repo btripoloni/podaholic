@@ -29,7 +29,7 @@ class Feed
               pub_date: Date.parse(item['pubDate']),
               duration: item['duration'],
               audio_url: resolve_audio_url(item['enclosure']),
-              image: item['image'].try(:url)
+              image_url: item['image'].try(:url)
             )
     end
   end
