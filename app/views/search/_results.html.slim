@@ -6,7 +6,7 @@
       = form_tag '/search', method: :get do
         = text_field_tag 'q', params[:q].presence, placeholder: 'Search'
   .body
-    - @episodes.each do |episode|
+    - @episodes.with_details.each do |episode, details|
       .item
         a href="#"
           .thumb
@@ -20,8 +20,8 @@
                 span
                   | &nbsp;Duration: 14:44
             .body
-              p
-                = episode.show_notes.truncate(300)
+            p
+              = show_notes(details, episode.show_notes).truncate(300).html_safe
 
   .pagination
     = will_paginate @episodes

@@ -1,5 +1,5 @@
 class Episode < ActiveRecord::Base
-  searchkick
+  searchkick highlight: [:show_notes]
   belongs_to :podcast
 
   validates_presence_of :title, :media_url, :podcast_id
