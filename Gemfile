@@ -20,6 +20,8 @@ gem 'bitters',                      '1.0.0'
 gem 'refills',                      '0.1.0'
 gem 'normalize-rails',              '3.0.1'
 gem 'httparty',                     '0.13.3'
+gem 'searchkick',                   '0.8.7'
+gem 'will_paginate',                '3.0.7'
 
 group :production, :staging do
   gem 'rails_12factor',             '0.0.3'

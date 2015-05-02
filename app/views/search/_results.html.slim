@@ -1,21 +1,27 @@
 .results
   .header
     .count
-      | 33 results found.
+      | #{episode.count} results found.
     .query
-      input type="text" placeholder="Search"
+      = form_tag '/search', method: :get do
+        = text_field_tag 'q', params[:q].presence, placeholder: 'Search'
   .body
-    - 1.upto(1).each do
+    - @episodes.each do |episode|
       .item
         a href="#"
           .thumb
-            = image_tag 'http://jovemnerd.com.br/wp-content/themes/jovemnerd_v2b/images/NC_FEED.jpg', height: 184, width: 184
+            = image_tag episode.art_work_url, height: 184, width: 184
           .info
             .header
-              h3 jovemnerd
+              h3= episode.title
               .insights
                 span
-                  | Duration: 14:44
+                  | #{episode.podcast_name}
+                span
+                  | &nbsp;Duration: 14:44
             .body
               p
-                = 'Lambda lambda lambda NERDS! Hoje Jovem Nerd, Carlos Voltor, Rex, Android e Azaghal falam do filme Vingadores: Era de Bocó… quer dizer, Ultron. Neste podcast: ouça que o mundo está sendo ameaçado por um motorista de táxi, repare nos cabelos do peito do Hulk, veja que o homem mais rápido do mundo nem é tão rápido assim e descubra qual nerdcaster tem o poder de rebobinar um filme nos cinemas! Atenção: Esse episódio contém spoilers de Vingadores: Era de Ultron Duração: 97 minutos ARTE DA VITRINE: Ciro Sollero Novidades na Nerdstore Spider Man Vs Venom Battle Diorama: http://bit.ly/1I1w1PY The Batman – Collectible Figure: http://bit.ly/1I1w4va The Joker – Collectible Figure: http://bit.ly/1I1w3aN Veja também: Cozinha: http://bit.ly/1C9WfxP Decoração: http://bit.ly/1C9WetV Colecionáveis: http://bit.ly/1C9Wt82 E muito mais: http://bit.ly/1C9WqsU Nerds na Caceta da Agulha Adriano Leite de Melo Alessandra Marcondes Antônio Eduardo Gregorin Ruette Bárbara Francesconi Bruno Marques Manso Cleber Santos Daniel Morais Eliana Oda Emerson Agapito Gabriel Stankevix Giovani Bruni Laud Giuliano Pieve Gustavo Baldissera Itallo Nebenzahl Jaime Fernandes Jeferson Piovezan José Eduardo José Henrique Laiane Senakievics Leandro Silva Marcelo Borsatti Marcio Mesquita Marcos Harano Jr.'.truncate(300)
+                = episode.show_notes.truncate(300)
+
+  .pagination
+    = will_paginate @episodes
