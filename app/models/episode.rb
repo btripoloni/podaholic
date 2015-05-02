@@ -4,6 +4,8 @@ class Episode < ActiveRecord::Base
 
   validates_presence_of :title, :media_url, :podcast_id
 
+  validates_uniqueness_of :media_url
+
   delegate :name, to: :podcast, prefix: true
 
   def search_data

@@ -35,4 +35,16 @@ RSpec.describe Feed, :vcr do
       expect(single_episode.audio_url).to match('nerdcast_463_vingadores_2.mp3')
     end
   end
+  describe '_resolve_audio_url' do
+    context 'when enclosure is an array' do
+
+      subject { feed.send(:resolve_audio_url, [{ 'url' => 'http://ga.com' }]) }
+      it { is_expected.to eq 'http://ga.com' }
+    end
+
+    context 'when enclosure is a hash' do
+      subject { feed.send(:resolve_audio_url, { 'url' => 'http://ga.com' }) }
+      it { is_expected.to eq 'http://ga.com' }
+    end
+  end
 end
