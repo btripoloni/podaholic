@@ -1,7 +1,7 @@
 .results
   .header
     .count
-      | #{episode.count} results found.
+      | #{@episodes.count} results found.
     .query
       = form_tag '/search', method: :get do
         = text_field_tag 'q', params[:q].presence, placeholder: 'Search'
