@@ -3,8 +3,13 @@
     .count
       | #{@episodes.count} results found.
     .query
-      = form_tag '/search', method: :get do
-        = text_field_tag 'q', params[:q].presence, placeholder: 'Search'
+      form.search-bar action="/search" role="search"
+        /! TODO: move this value to a helper
+        input type="text" value="#{params[:q].presence}" placeholder="Search" name="q"
+        button type="submit"
+          /! TODO: verify if is possible to import image directly from refills gem
+          img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png"
+
   .body
     - @episodes.with_details.each do |episode, details|
       .item
