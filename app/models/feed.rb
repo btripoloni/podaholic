@@ -15,7 +15,7 @@ class Feed
   def podcast
     OpenStruct.new(name: response['title'],
                    description: response['description'],
-                   image_url: response['image'][1]['href'])
+                   image_url: resolve_image_url(response['image']))
   end
 
   def episodes
@@ -41,5 +41,8 @@ class Feed
     audio['url']
   end
 
-
+  def resolve_image_url(image_object)
+    img = image_object.is_a?(Array) ? image_object.last : image_object
+    img['href']
+  end
 end
