@@ -1,14 +1,13 @@
 .sidebar
-  - 1.upto(2).each do 
-    .item-group
-      .header
-        h2 Publisher
-      .body
-        ul
-          - 1.upto(4).each do
-            li
-              a href="#"
-                | JovemNerd
-                span.count
-                  | &nbsp;(3)
+  .item-group
+    .header
+      h2 Publisher
+    .body
+      ul
+        - @episodes.facets['podcast_name']['terms'].each do |facet|
+          li
+            a href="#"
+              = facet['term']
+              span.count
+                | &nbsp; #{facet['count']}
 
