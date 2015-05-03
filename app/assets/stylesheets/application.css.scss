@@ -1,5 +1,5 @@
 // Basic
-@import 'normalize-rails/normalize.css';
+@import 'normalize-rails';
 @import 'bourbon';
 @import 'base/base';
 @import 'neat';
@@ -13,3 +13,4 @@
 
 // Components
 @import 'components/search_bar';
+@import 'components/modal';

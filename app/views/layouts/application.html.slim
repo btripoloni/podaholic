@@ -21,12 +21,12 @@ html lang="pt"
     .content
       header
         #logo
-          = link_to root_path do 
+          = link_to root_path do
             h1 Podaholic
         #header-right
-          =link_to 'Haven\'t found your podcast? click to add!'
-      t
+          = render 'layouts/submit_modal'
       = render 'flash_messages'
       = yield
 
     = render 'layouts/footer'
+    = render 'layouts/submit_modal'
