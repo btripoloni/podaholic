@@ -1,7 +1,7 @@
 .results
   .header
     .count
-      | #{@episodes.count} results found.
+      | #{@episodes.response['hits']['total']} results found.
     .query
       form.search-bar action="/search" role="search"
         /! TODO: move this value to a helper
