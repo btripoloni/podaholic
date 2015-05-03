@@ -6,8 +6,8 @@
       ul
         - @episodes.facets['podcast_name']['terms'].each do |facet|
           li
-            a href="#"
+            = link_to_publisher(facet) do
               = facet['term']
               span.count
-                | &nbsp; #{facet['count']}
+                | &nbsp; (#{facet['count']})
 

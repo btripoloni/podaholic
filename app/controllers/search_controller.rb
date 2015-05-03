@@ -21,7 +21,12 @@ class SearchController < ApplicationController
       order: {
         _score: :desc,
         release_date: :desc
-      }
+      },
+      where: where_params
     }
+  end
+
+  def where_params
+    params.permit(:podcast_name)
   end
 end
