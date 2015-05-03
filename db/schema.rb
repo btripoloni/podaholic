@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503135014) do
+ActiveRecord::Schema.define(version: 20150503172315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150503135014) do
     t.datetime "updated_at",   null: false
     t.string   "permalink"
     t.string   "duration"
+    t.datetime "release_date"
   end
 
   add_index "episodes", ["podcast_id"], name: "index_episodes_on_podcast_id", using: :btree

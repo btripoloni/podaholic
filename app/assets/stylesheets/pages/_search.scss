@@ -61,7 +61,11 @@
             h3, .insights { margin-bottom: 3px; }
 
             h3 { font-size: 2em; }
-            .insights { font-size: 0.9em; }
+
+            .insights {
+              font-size: 0.9em;
+              > span { margin-right: 10px; }
+            }
           }
         }
       }

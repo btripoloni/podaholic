@@ -26,7 +26,7 @@ class Feed
         description: item['description'],
         summary: item['summary'],
         raw_description: item['encoded'],
-        pub_date: Date.parse(item['pubDate']),
+        pub_date: Time.zone.parse(item['pubDate']),
         duration: item['duration'],
         audio_url: resolve_audio_url(item['enclosure']),
         image_url: item['image'].try(:url)

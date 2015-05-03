@@ -19,6 +19,7 @@ class Podcast < ActiveRecord::Base
                               duration: episode.duration,
                               show_notes: episode.summary,
                               art_work_url: podcast.image_url,
+                              release_date: episode.pub_date,
                               media_url:  episode.audio_url)
     end
   end

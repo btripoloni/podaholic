@@ -27,6 +27,7 @@ RSpec.describe Podcast, :type => :model do
       expect(episode.title).to eq 'Nerdcast 463 – Vingadores: A carência de Ultron'
       expect(episode.show_notes).not_to be_blank
       expect(episode.media_url).not_to be_blank
+      expect(episode.release_date).not_to be_blank
     end
   end
 

@@ -23,7 +23,11 @@
                 span
                   | #{episode.podcast_name}
                 span
-                  | &nbsp;Duration: #{episode.duration}
+                  strong Duration:
+                  | &nbsp#{episode.duration}
+                span
+                  strong Release date:
+                  | &nbsp#{episode.release_date}
             .body
             p
               = show_notes(details, episode.show_notes)

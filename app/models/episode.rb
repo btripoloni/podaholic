@@ -2,8 +2,7 @@ class Episode < ActiveRecord::Base
   searchkick highlight: [:show_notes]
   belongs_to :podcast
 
-  validates_presence_of :title, :media_url, :podcast_id
-
+  validates_presence_of :title, :media_url, :podcast_id, :release_date
   validates_uniqueness_of :media_url
 
   delegate :name, to: :podcast, prefix: true
