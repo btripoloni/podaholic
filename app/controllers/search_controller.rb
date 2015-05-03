@@ -17,7 +17,11 @@ class SearchController < ApplicationController
           fragment_size: 300
         }
       },
-      fields: ['title^10', 'show_notes^5']
+      fields: ['title^10', 'show_notes^5'],
+      order: {
+        _score: :desc,
+        release_date: :desc
+      }
     }
   end
 end
