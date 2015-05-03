@@ -29,7 +29,7 @@ class Podcast < ActiveRecord::Base
 
     podcast = find_or_create_by(feed_url: apple_podcast_info['feedUrl']).tap do |pod|
       pod.name        = apple_podcast_info['trackName']
-      pod.image_url   = apple_podcast_info['artworkUrl100']
+      pod.image_url   = apple_podcast_info['artworkUrl600']
       pod.save
     end
 
