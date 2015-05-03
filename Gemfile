@@ -24,6 +24,7 @@ gem 'searchkick',                   '0.8.7'
 gem 'will_paginate',                '3.0.7'
 gem 'sidekiq',                      '3.3.4'
 gem 'sinatra',                      '1.4.6', require: false
+gem 'itunes-search-api',            '0.1.0'
 
 group :production, :staging do
   gem 'rails_12factor',             '0.0.3'
