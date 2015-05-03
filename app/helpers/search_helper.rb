@@ -1,8 +1,9 @@
 module SearchHelper
 
   def show_notes(details, episode_show_notes)
-    description = Hash(details[:highlight]).fetch(:show_notes, episode_show_notes).to_s
-    description.truncate(300).html_safe
+    details = Hash(details[:highlight])
+    description = details.fetch(:show_notes, episode_show_notes.to_s.truncate(300))
+    description.html_safe
   end
 end
 
