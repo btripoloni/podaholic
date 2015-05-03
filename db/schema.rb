@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150502202921) do
     t.text     "feed_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image_url"
   end
 
   add_foreign_key "episodes", "podcasts"

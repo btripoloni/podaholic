@@ -9,10 +9,10 @@ class Podcast < ActiveRecord::Base
     podcast = find_or_create_by(feed_url: feed_url) do |pod|
       pod.name        = feed.podcast.name
       pod.description = feed.podcast.description
+      pod.image_url   = feed.podcast.image_url
     end
 
     feed.episodes.each do |episode|
-      puts episode.image_url
       podcast.episodes.create(title: episode.title,
                               permalink: episode.link,
                               duration: episode.duration,
