@@ -26,7 +26,7 @@
                   | &nbsp;Duration: #{episode.duration}
             .body
             p
-              = show_notes(details, episode.show_notes).truncate(300).html_safe
+              = show_notes(details, episode.show_notes)
 
   .pagination
     = will_paginate @episodes
