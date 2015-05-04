@@ -14,9 +14,10 @@ class Feed
 
   def podcast
     OpenStruct.new(
-      :name         => content_at('title'),
-      :description  => content_at('description'),
-      :image_url    => resolve_image_url(content_at('image')))
+      :name         => at_xpath('//title').content,
+      :description  => at_xpath('//description').content,
+      :image_url    => resolve_image_url(at_xpath('//itunes:image').to_s)
+    )
   end
 
   def episodes
@@ -45,11 +46,11 @@ class Feed
   end
 
   def extract_url(text)
-    text.match(/(#{URI.regexp})/)
+    text.match(/(http\:\/\/.*\.\w{1,3})/i)
     $1
   end
 
-  def content_at(xpath)
-    @response.at_xpath("//rss/channel//#{xpath}").content
+  def at_xpath(xpath)
+    @response.at_xpath(xpath)
   end
 end
