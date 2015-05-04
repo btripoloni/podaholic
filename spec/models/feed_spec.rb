@@ -28,7 +28,6 @@ RSpec.describe Feed, :vcr do
       expect(single_episode.link).to match('nerdcast-463-vingadores-a-carencia-de-ultron')
       expect(single_episode.description).to match('lambda lambda NERDS!')
       expect(single_episode.summary).to match('lambda lambda NERDS!')
-      expect(single_episode.raw_description).to match('lambda NERDS! Hoje <a href')
       expect(single_episode.pub_date.day).to eq 1
       expect(single_episode.pub_date.mon).to eq 5
       expect(single_episode.duration).to eq '1:37:15'

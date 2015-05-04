@@ -26,7 +26,6 @@ class Feed
         :link             => item.css('link').text,
         :description      => item.css('description').text,
         :summary          => item.css('itunes|summary').text,
-        :raw_description  => item.css('content|encoded').text,
         :pub_date         => Time.zone.parse(item.css('pubDate').text),
         :duration         => item.css('itunes|duration').text,
         :audio_url        => resolve_audio_url(item.css('enclosure').to_s),
