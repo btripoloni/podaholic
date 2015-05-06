@@ -7,10 +7,9 @@ class Episode < ActiveRecord::Base
 
   delegate :name, to: :podcast, prefix: true
 
-  def search_data
-    attributes.merge(
-      podcast_name: podcast_name
-    )
+  scope :search_import, -> { includes(:podcast) }
 
+  def search_data
+    attributes.merge(podcast_name: podcast_name)
   end
 end
