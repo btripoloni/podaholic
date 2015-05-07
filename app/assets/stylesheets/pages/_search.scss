@@ -31,12 +31,12 @@
       margin-bottom: 1em;
 
       .count {
-        @include span-columns(4);
+        @include span-columns(3);
         padding: 5px 0;
       }
 
       .query {
-        @include span-columns(8);
+        @include span-columns(9);
       }
     }
 
