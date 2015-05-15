@@ -1,6 +1,4 @@
 require 'rails_helper'
-require 'httparty'
-require "#{Rails.root}/app/models/feed"
 
 RSpec.describe Feed, :vcr do
   let(:feed) { Feed.new('http://jovemnerd.com.br/categoria/nerdcast/feed/') }
